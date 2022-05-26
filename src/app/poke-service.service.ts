@@ -16,5 +16,11 @@ export class PokeService {
       startWith(JSON.parse(localStorage['chash_key'] || '{}')),
       filter(res=>Object.keys(res).length !== 0), 
     );
+    /* in case response is an array instead of object
+    .pipe(
+      tap(res => localStorage['chash_key'] = JSON.stringify(res)),
+      startWith(JSON.parse(localStorage[‘chash_key’] || ‘[]’))
+    );
+    */
   }
 }

@@ -1,0 +1,3 @@
+<div *ngFor="let pokemon of pokemons; let i = index">
+  <p [attr.data-index]="i">{{pokemon.name | titlecase }} : pokemon {{i+1}}</p>
+</div>
